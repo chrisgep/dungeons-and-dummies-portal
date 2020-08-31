@@ -1,0 +1,1 @@
+export const baseDnD5eAPI = "https://www.dnd5eapi.co/api/";
