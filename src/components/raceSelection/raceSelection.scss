@@ -1,0 +1,64 @@
+img.raceImage {
+        width: 200px; /* width of container */
+        height: 200px; /* height of container */
+        object-fit: cover;
+        object-position: 0px 0px;
+        transition: 0.5s;
+}
+
+.raceRow {
+    max-width: 200px;
+    padding: .25em;
+    filter: brightness(50%);
+    transition: 0.5s;
+}
+
+.raceRow:hover {
+    transform: scale(1.05);
+    filter: brightness(100%);
+}
+
+//
+// Gradient system
+//
+$gradients: () !default;
+$gradients: map-merge((
+    elf: linear-gradient(135deg, #80ee80 0%,#b3c421 100%),
+    dragonborn: linear-gradient(135deg, #ee80a5 0%,#c42121 100%),
+    dwarf: linear-gradient(135deg, #ee9f80 0%,#c1c421 100%),
+    gnome: linear-gradient(135deg, #daee80 0%,#21c465 100%),
+    'half-elf': linear-gradient(135deg, #80eeb1 0%,#217bc4 100%),
+    'half-orc': linear-gradient(135deg, #ee8080 0%,#c4b921 100%),
+    human: linear-gradient(135deg, #80cbee 0%,#3f21c4 100%),
+    halfling: linear-gradient(135deg, #80ee89 0%,#219ec4 100%),
+    tiefling: linear-gradient(135deg, #e180ee 0%,#c42121 100%)
+
+), $gradients);
+
+
+// Gradient backgrounds
+@mixin bg-gradient($parent, $gradient) {
+  #{$parent} {
+    background: $gradient;
+  }
+}
+
+// Gradient text
+@mixin text-gradient($parent, $gradient) {
+  #{$parent} {
+    background-image: $gradient;
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+// Gradient Classes 
+@each $gradient, $value in $gradients {
+  @include bg-gradient(".bg-gradient-#{$gradient}", $value);
+}
+
+// Gradient Classes 
+@each $gradient, $value in $gradients {
+  @include text-gradient(".text-gradient-#{$gradient}", $value);
+}

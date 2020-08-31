@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import * as Constants from '../shared/constants';
+import {Container, Image, Col, Row} from 'react-bootstrap';
+import * as Constants from '../../shared/constants';
+import Colors from '../../shared/colors';
+import './raceSelection.scss';
 
 function RaceSelection(props) {
     const [races, setRaces] = useState([]);
@@ -26,12 +29,16 @@ function RaceSelection(props) {
     });
     
     const listItems = races.map((race) =>
-        <li key={race.index}>
-            {race.name}
-        </li>
+        <Col xs={6} md={4} className='raceRow' key={race.index}>
+            <Image className={'raceImage' + ' bg-gradient-' + race.index} src={require(`../../../images/${race.index}.png`)} fluid />
+        </Col>
     );
     return (
-        <ul>{listItems}</ul>
+        <Container>
+            <Row >
+                {listItems}
+            </Row>
+        </Container>
     );
   }
 
