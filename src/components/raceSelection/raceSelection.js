@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Container, Image, Col, Row} from 'react-bootstrap';
 import * as Constants from '../../shared/constants';
-import Colors from '../../shared/colors';
+import Gradients from '../../shared/gradients.scss';
 import './raceSelection.scss';
 
 function RaceSelection(props) {
@@ -29,16 +29,23 @@ function RaceSelection(props) {
     });
     
     const listItems = races.map((race) =>
-        <Col xs={6} md={4} className='raceRow' key={race.index}>
-            <Image className={'raceImage' + ' bg-gradient-' + race.index} src={require(`../../../images/${race.index}.png`)} fluid />
+        <Col className={`raceCol bg-gradient-${race.index}`} xs={4} sm={4} md={4} lg={4} xl={4} key={race.index}>
+            <Image className={'raceImage'} src={require(`../../../images/${race.index}.png`)} fluid />
         </Col>
     );
     return (
-        <Container>
-            <Row >
-                {listItems}
-            </Row>
-        </Container>
+        <div class='raceContainer'>
+            <Container className='titleContainer'>
+                <h1>
+                    Select a Race
+                </h1>
+            </Container>
+            <Container className='raceListContainer'>
+                <Row className='raceImageRow'>
+                    {listItems}
+                </Row>
+            </Container>
+        </div>
     );
   }
 
