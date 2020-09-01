@@ -3,25 +3,52 @@ img.raceImage {
   height: 100%; /* height of container */
   object-fit: cover;
   object-position: 0px 0px;
-  transition: 1s;
+  transition: 1s ease;
+  filter: brightness(50%);
 }
 
 img.raceImage:hover {
   transform: scale(1.05);
+  filter: brightness(100%);
 }
 
+.raceContainer {
+  p {
+    color: rgb(241, 241, 241);
+  }
+  h1 {
+    color: rgb(241, 241, 241);
+  }
+}
+
+.text {
+  color: rgb(241, 241, 241);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  font-size: 3vw;
+}
+
+/* @media (min-width: 1000px) {
+  .text {
+    font-size: calc(1rem + 1.5vw);
+  }
+} */
+
 div.raceCol {
-  filter: brightness(50%);
-  transition: 0.33s;
+  transition: 1s ease;
   padding: 0;
   overflow: hidden;
 }
 
 .raceCol:hover {
-  filter: brightness(100%);
+  background-color: rgba(0,0,0,1);
 }
 
 .titleContainer {
-  padding-bottom: 50px;
+  padding-bottom: 20px;
+  padding-top: 60px;
 }
 

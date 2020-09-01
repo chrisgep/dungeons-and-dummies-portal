@@ -12,6 +12,7 @@ $gradients: map-merge((
   human: linear-gradient(135deg, #80cbee 0%,#3f21c4 100%),
   halfling: linear-gradient(135deg, #80ee89 0%,#219ec4 100%),
   tiefling: linear-gradient(135deg, #e180ee 0%,#c42121 100%),
+  lightText: linear-gradient(135deg, #ffcdcd 0%,#fff6ce 100%)
 ), $gradients);
 
 
