@@ -29,25 +29,20 @@ function RaceSelection(props) {
     });
     
     const listItems = races.map((race) =>
-        <Col className={`raceCol`} xs={4} sm={4} md={4} lg={4} xl={4} key={race.index}>
-            <Image className={`raceImage bg-gradient-${race.index}`} src={require(`../../../images/${race.index}.png`)} fluid />
-                <div class="text">{race.name.toUpperCase()}</div>
+        <Col className={`raceCol`} xs={6} sm={6} md={6} lg={2} xl={2} key={race.index}>
+            <Image className={`raceImage bg-gradient-${race.index}`} src={require(`../../images/${race.index}.png`)} fluid />
+            <div class="text">{race.name.toUpperCase()}</div>
         </Col>
     );
     return (
         <div class='raceContainer'>
             <Container className='titleContainer'>
                 <h1 className='text-gradient-lightText'>
-                    Select a Race
+                    Select Your Race
                 </h1>
             </Container>
-            <Container className='descContainer'>
-                <p className='text-gradient-lightText'>
-                    From the nimble halfings to the towering half-orcs, there is a race for everyone.
-                </p>
-            </Container>
-            <Container className='raceListContainer'>
-                <Row className='raceImageRow'>
+            <Container className='raceListContainer mb-3'>
+                <Row className='raceImageRow justify-content-center'>
                     {listItems}
                 </Row>
             </Container>

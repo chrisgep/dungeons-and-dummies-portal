@@ -1,4 +1,4 @@
-import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
+import {Nav, Navbar, Image, NavDropdown} from 'react-bootstrap';
 import React, {Container} from 'react';
 import './appnav.scss';
 
@@ -7,7 +7,7 @@ function AppNav(props) {
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand href="#home">Dungeons And Dummies</Navbar.Brand>
+            <Image className={`logo offset-1 mr-5`} src={require(`../../images/logo.png`)} fluid />
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">

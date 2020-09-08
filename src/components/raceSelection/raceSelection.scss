@@ -10,6 +10,7 @@ img.raceImage {
 img.raceImage:hover {
   transform: scale(1.05);
   filter: brightness(100%);
+  cursor: pointer;
 }
 
 .raceContainer {
@@ -24,11 +25,11 @@ img.raceImage:hover {
 .text {
   color: rgb(241, 241, 241);
   position: absolute;
-  top: 50%;
+  top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  font-size: 3vw;
+  font-size: 20px;
 }
 
 /* @media (min-width: 1000px) {
@@ -50,5 +51,12 @@ div.raceCol {
 .titleContainer {
   padding-bottom: 20px;
   padding-top: 60px;
+}
+
+img.selectedRace {
+  width: 100%; /* width of container */
+  height: 100%; /* height of container */
+  object-fit: cover;
+  object-position: 0px 0px;
 }
 
