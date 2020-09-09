@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import {Container, Image, Col, Row} from 'react-bootstrap';
+import {Container, Image, Col, Row, Button} from 'react-bootstrap';
 import * as Constants from '../../shared/constants';
-import Gradients from '../../shared/gradients.scss';
 import { Link } from "react-router-dom";
-import './raceSelection.scss';
+import './selectedRace.scss';
 
 function RaceSelection(props) {
     const [races, setRaces] = useState([]);
@@ -29,24 +28,32 @@ function RaceSelection(props) {
         });
     });
     
-    const listItems = races.map((race) =>
-        <Col className={`raceCol`} xs={6} sm={6} md={6} lg={2} xl={2} key={race.index}>
-            <Link to="/selectedrace" >
-                <Image className={`raceImage bg-gradient-${race.index}`} src={require(`../../images/${race.index}.png`)} fluid />
-                <div class="text">{race.name.toUpperCase()}</div>
-            </Link>
-        </Col>
-    );
     return (
         <div class='raceContainer'>
             <Container className='titleContainer'>
                 <h1 className='text-gradient-lightText'>
-                    Select Your Race
+                    [Race Name]
                 </h1>
+                <Row className='justify-content-center'>
+                    <Col className={`selectedRaceText`} xs={11} sm={11} md={11} lg={6} xl={6}>
+                        <p>Text information giving a breif discription of the chosen race and what
+                        they are all about. It should probably go on for about as long as this
+                        paragraph of information does. Maybe some stuff about their perks, but
+                        not getting into the stats, like humans get bonusus to any of their chosen
+                        abilities.
+                        </p>
+                    </Col>
+                </Row>
             </Container>
             <Container className='raceListContainer mb-3'>
                 <Row className='raceImageRow justify-content-center'>
-                    {listItems}
+                    <Image className={`chosenRaceImage bg-gradient-human`} src={require(`../../images/human.png`)} fluid />
+                </Row>
+                <Row className='buttonRow mt-4 justify-content-center'>
+                    <Link to="/" >
+                        <button className={`backButton mx-1`} size="lg">⇦ Back</button>{' '}
+                    </Link>
+                    <button className={`nextButton mx-1`} size="lg">Next ⇨</button>{' '}
                 </Row>
             </Container>
         </div>

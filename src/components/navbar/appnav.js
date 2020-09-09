@@ -7,7 +7,7 @@ function AppNav(props) {
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Image className={`logo offset-1 mr-5`} src={require(`../../images/logo.png`)} fluid />
+            <Image className={`logo offset-lg-1 mr-5`} src={require(`../../images/logo.png`)} fluid />
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">

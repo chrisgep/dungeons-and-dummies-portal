@@ -1,14 +1,17 @@
 import React from 'react';
-import RaceSelection from './components/raceSelection/raceSelection.js';
-import AppNav from './components/navbar/appnav.js'
+import RaceSelection from './pages/raceSelectionPage'
+import SelectedRace from './pages/selectedRacePage';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <AppNav />
-      <RaceSelection />
+      <Router>
+        <Route exact path="/" component={RaceSelection} />
+        <Route exact path="/selectedRace" component={SelectedRace} />
+      </Router>
     </div>
   );
 }

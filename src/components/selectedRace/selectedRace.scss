@@ -1,0 +1,29 @@
+.chosenRaceImage {
+    height: 25%;
+    width: 25%;
+}
+@media (max-width:800px){
+    .chosenRaceImage {
+        height: 60%;
+        width: 60%;
+    }
+}
+
+.nextButton, .backButton {
+    color: white;
+    font-size: 30px;
+    height: 60px;
+    width: 140px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(66, 66, 66); 
+}
+.nextButton:hover {
+    background-color: rgb(190, 31, 169);
+}
+.backButton:hover {
+    background-color: rgb(190, 31, 97);
+}
+.nextButton:focus, .backButton:focus {
+    outline: none;
+}
